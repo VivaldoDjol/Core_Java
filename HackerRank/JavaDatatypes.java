@@ -1,5 +1,10 @@
 import java.util.*;
 
+/**
+ * @author Vivaldo Djol
+ *
+ */
+
 class Solution {
     public static void main(String[] argh) {
         Scanner sc = new Scanner(System.in);
@@ -8,7 +13,7 @@ class Solution {
         // Define the types and their bounds
         String[] types = { "byte", "short", "int", "long" };
         long[] mins = { -128, -32768, -2147483648, -9223372036854775808L };
-        long[] maxs = { 127, 32768, 2147483647, 9223372036854775807L };
+        long[] maxs = { 127, 32767, 2147483647, 9223372036854775807L };
 
         while (t-- > 0) {
             try {
