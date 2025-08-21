@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        
+        int count = 0;
+        int levelSum = 0;
+        int accumulatedSum = 0;
+        
+        while (accumulatedSum <= n) {
+            count++;
+            levelSum += count;
+            accumulatedSum += levelSum;
+        }
+        
+        System.out.println(--count);
+        sc.close();
+    }
+}
