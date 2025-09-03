@@ -1,30 +1,25 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class Main {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        while (sc.hasNextLine()) {
-            int count = sc.nextInt();
+        int tests = sc.nextInt();
+        while (tests-- > 0) {
+            int n = sc.nextInt();
+            int[] freq = new int[n + 1];
+            int res = -1;
 
-            ArrayList<Integer> currentSequence = new ArrayList<>();
-
-            if (sc.hasNextLine()) {
-                String numbersLine = sc.nextLine();
-                Scanner lineScanner = new Scanner(numbersLine);
-
-                for (int i = 0; i < count; i++) {
-                    if (lineScanner.hasNextInt()) {
-                        currentSequence.add(lineScanner.nextInt());
+            for (int i = 0; i < n; i++) {
+                int x = sc.nextInt();
+                if (freq[x] < 3) {
+                    freq[x]++;
+                    if (freq[x] == 3) {
+                        res = x;
                     }
                 }
-                lineScanner.close();
             }
-                for (int i = 0; i < currentSequence.size(); i++) {
-                System.out.print(currentSequence.get(i) + (i == currentSequence.size() - 1 ? "" : " "));
-            }
+            System.out.println(res);
         }
         sc.close();
     }
